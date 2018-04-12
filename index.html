@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<style>
+
+#myVideo 
+{
+    position:fixed;
+    z-index:0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+
+audio
+{
+        display:none;
+}
+
+.words
+{
+    position:relative;
+    left:40px;
+    font-family: 'Lobster', cursive; 
+    color:white;;
+    display:none;
+    font-size:50px;
+}
+.btnBook
+{
+     display:none;
+     width:300px;
+     background-color:azure;
+     color:moccasin;
+     font-family: 'Lobster', cursive; 
+     font-size:35px;
+     margin:auto;
+     display: block;
+     
+}
+
+h1
+{
+    color:white;
+    left:40px;
+}
+</style>
+</head>
+
+<body>
+
+<audio controls autoplay="true" loop>
+    <source src="beach_sound.wav" type="audio/wav">
+</audio>
+
+<video autoplay loop id="myVideo">
+  <source src="Beach.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<span class="words">Welcome </span><span class="words">To </span><span class="words"> the </span>
+<span class="words"> Beautiful </span><span class="words"> Maldives </span><span class="words"> Islands </span>
+    
+    <h1></h1>
+    <Button class="btnBook">Learn More</Button>    
+
+
+<script>
+$(document).ready(function() 
+{
+    $("span").each(function(index) 
+    {
+        $(this).delay(400*index).fadeIn(4000);
+    });
+    
+    $("h1").fadeIn(2000);
+    
+});
+
+$(document).click(function() 
+{   
+    $('h1').text("Plan your Destination Wedding on the Beautiful Beaches");
+    $('button').show();
+    $('video').remove();
+    $('body').css('background-image', 'url(flowers.jpg)');
+    $('body').css('background-size', 'cover');
+    
+});
+
+$("button").click(function() 
+{ 
+window.location="destinations.html";
+});
+</script>
+
+</body>
+</html>
